@@ -1,4 +1,20 @@
 #!/usr/bin/perl
+##############################################################################
+# File   : 
+# Author : Gary Barker  <Gary.Barker@bristol.ac.uk>
+# Contributor: Virginia Rodriguez Almansa  <virginia.rodriguez.almansa@gmail.com>
+# 
+# Usage: perl complementary_material_msc.pl marker_data.txt min_maf min_call_rate
+#
+#     - marker_data.txt: Dataset separeted by tabs containing all the markers in rows and all the 
+#         varieties in collumns from where you want to make the selection.
+#
+#     - min_maf: MAF is minor allele frequency.  
+#          This is set to a low level to include as many markers as possible but exclude rare error calls
+# 
+#    - min_call_rate: Ignore markers with less than this proportion of good (0, 1 of 2 ) calls.
+#
+##############################################################################
 
 
 
@@ -21,13 +37,12 @@ $maxmarkers =50000;
 $min_maf = $ARGV[1];
 
 #MAF is minor allele frequency.  This is set to a low level to include as many markers as possible but exclude rare error calls.
-#It needs optimising.
 
 
 $min_call_rate = $ARGV[2];
 
 
-#Ignore markers with less than this proportion of good (0, 1 of 2 ) calls.  Probably needs optimising.
+#Ignore markers with less than this proportion of good (0, 1 of 2 ) calls.  
 
 
 #Get the input file name from the command line - first argument:  e.g. ./select_minimal_markers.pl All_marker_data.txt
